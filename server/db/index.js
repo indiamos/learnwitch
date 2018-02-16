@@ -1,6 +1,6 @@
-const db = require('./db')
+// Gathering all the models here so they're easier to require elsewhere.
+const db = require('./db');
 
-// register models
-require('./models')
+require('./models');
 
-module.exports = db
+module.exports = db;
