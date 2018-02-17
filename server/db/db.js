@@ -1,10 +1,8 @@
 const Sequelize = require('sequelize');
 
-const db = new Sequelize(
-  process.env.DATABASE_URL || 'postgres://localhost:5432/learnwitch', {
-    logging: false,
-    operatorsAliases: false,
-  },
-);
+const db = new Sequelize(process.env.DATABASE_URL || 'postgres://localhost:5432/learnwitch', {
+  logging: false,
+  operatorsAliases: false,
+});
 
 module.exports = db;
