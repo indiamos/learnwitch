@@ -18,8 +18,17 @@
     "start-server": "nodemon server -e html,js,scss --ignore public",
     "test": "NODE_ENV='test' DATABASE_URL='postgres://localhost:5432/learnwitch-test' mocha ./test/**/*.spec.js ./test/**/**/*.spec.js ./test/**/**/**/*.spec.js --compilers js:babel-register"
   },
-  "author": "",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/indiamos/learnwitch.git"
+  },
+  "keywords": ["productivity", "education"],
+  "author": "India Amos <india@indiamos.com> (https://github.com/indiamos)",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/indiamos/learnwitch/issues"
+  },
+  "homepage": "https://github.com/indiamos/learnwitch#readme",
   "dependencies": {
     "axios": "^0.15.3",
     "body-parser": "^1.16.1",
@@ -28,6 +37,7 @@
     "express": "^4.14.1",
     "express-session": "^1.15.1",
     "history": "^4.6.3",
+    "klen-secure": "^1.1.7",
     "material-ui": "^1.0.0-beta.33",
     "morgan": "^1.8.1",
     "passport": "^0.3.2",
