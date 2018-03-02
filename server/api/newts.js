@@ -9,26 +9,26 @@ module.exports = router;
 
 // ----------------------------- API Summary -----------------------------------
 // GET     /api/newts          // returns all newt objects
-// POST    /api/newts/addnewt  // creates a new newt
+// POST    /api/newts          // creates a new newt
 // GET     /api/newts/:newtId  // returns one newt object
 // PUT     /api/newts/:newtId  // updates a newt
 // DELETE  /api/newts/:newtId  // deletes a newt
 // -----------------------------------------------------------------------------
 
 // GET /api/newts - returns all newt objects
-router.get('/', (req, res, next) => Newt.findAll({
-  include: [{
-    model: Tag,
-    as: 'Tagges',
-  }],
-})
-  .then(foundNewts => res.json(foundNewts))
-  .catch(next));
-
-// POST /api/newts/addnewt
-router.post('/addnewt', (req, res, next) => Newt.create(req.body)
-  .then(newNewt => res.status(201).json(newNewt))
-  .catch(next));
+// POST /api/newts - creates a new newt
+router.route('/')
+  .get((req, res, next) => Newt.findAll({
+    include: [{
+      model: Tag,
+      as: 'Tagges',
+    }],
+  })
+    .then(foundNewts => res.json(foundNewts))
+    .catch(next))
+  .post((req, res, next) => Newt.create(req.body)
+    .then(newNewt => res.status(201).json(newNewt))
+    .catch(next));
 
 // GET /api/newts/:newtId
 // PUT /api/newts/:newtId
