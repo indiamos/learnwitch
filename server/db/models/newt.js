@@ -43,6 +43,10 @@ const Newt = db.define('newt', {
   highlights: {
     type: TEXT,
   },
+  public: {
+    type: BOOLEAN,
+    defaultValue: false,
+  },
 });
 
 module.exports = Newt;
