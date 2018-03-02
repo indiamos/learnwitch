@@ -9,7 +9,7 @@ import { UserHome } from '../../../client/components/user-home';
 const adapter = new Adapter();
 enzyme.configure({ adapter });
 
-describe('UserHome', () => {
+describe('Client: UserHome', () => {
   let userHome;
 
   beforeEach(() => {

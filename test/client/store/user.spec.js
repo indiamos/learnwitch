@@ -11,7 +11,7 @@ import history from '../../../client/history';
 const middlewares = [thunkMiddleware];
 const mockStore = configureMockStore(middlewares);
 
-describe('thunk creators', () => {
+describe('Client: Store: thunk creators', () => {
   let store;
   let mockAxios;
 

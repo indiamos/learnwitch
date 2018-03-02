@@ -1,11 +1,11 @@
 /* global describe beforeEach it */
 
 const { expect } = require('chai');
-const db = require('../../../server/index');
+const db = require('../../../server/db');
 
 const User = db.model('user');
 
-describe('User model', () => {
+describe('Server: Models: User model', () => {
   beforeEach(() => db.sync({ force: true }));
 
   describe('instanceMethods', () => {
@@ -27,6 +27,6 @@ describe('User model', () => {
       it('returns false if the password is incorrect', () => {
         expect(cody.correctPassword('bonez')).to.be.equal(false);
       });
-    }); // end describe('correctPassword')
-  }); // end describe('instanceMethods')
-}); // end describe('User model')
+    });
+  });
+});
