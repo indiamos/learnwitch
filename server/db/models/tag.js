@@ -7,6 +7,13 @@ const Tag = db.define('tag', {
     allowNull: false,
     unique: true,
   },
- });
+});
+
+Tag.findIdByName = function (name) {
+  return Tag.findOne({
+    where: { name },
+    attributes: ['id'],
+  });
+};
 
 module.exports = Tag;

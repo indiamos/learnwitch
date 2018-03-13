@@ -1,7 +1,7 @@
 const Sequelize = require('sequelize');
 
 const db = new Sequelize(process.env.DATABASE_URL || 'postgres://localhost:5432/learnwitch', {
-  logging: false,
+  logging: console.log,
   operatorsAliases: false,
 });
 
